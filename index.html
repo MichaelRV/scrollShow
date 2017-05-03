@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	
+	<title>jquery.easeParallax</title>
+	
+	<link href="css/jquery.easeParallax.css" rel="stylesheet"/>
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	
+	<style>
+		html, body {
+			padding: 0;
+			margin: 0;
+		}
+		
+		section {
+			height: 100vh;
+		}
+		
+		#section-1 {
+			background-color: #212121;
+		}
+		
+		#section-2 {
+			position: relative;
+			width: 100%;
+			background-color: #f4f4f4;
+		}
+		
+		#section-2 .item-show {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 300px;
+			height: 300px;
+			margin-top: -150px;
+			margin-left: -150px;
+			background-color: #212121;
+			transform: scale(0) rotate(180deg);
+			transition: transform .5s ease-out
+		}
+		
+		#section-2 .item-show.show {
+			transform: scale(1) rotate(0);
+		}
+	</style>
+</head>
+<body>
+
+<section id="section-1"></section>
+
+<section id="section-2" class="scrollShow">
+	<div class="item-show"></div>
+</section>
+
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/jquery.parallax.js"></script>
+<script>
+	$('.scrollShow').scrollShow({
+		children: '.item-show'
+	});
+</script>
+</body>
+</html>
